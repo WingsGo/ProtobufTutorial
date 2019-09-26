@@ -23,9 +23,9 @@ if(MSVC AND protobuf_MSVC_STATIC_RUNTIME)
     endforeach()
 endif()
 
-foreach(example add_person list_people)
+foreach(example add_person list_people guide_client)
     set(${example}_SRCS ${example}.cc)
-    set(${example}_PROTOS addressbook.proto ${example}.cc)
+    set(${example}_PROTOS addressbook.proto guide.proto)
 
     #Code Generation
     if(protobuf_MODULE_COMPATIBLE) #Legacy Support
